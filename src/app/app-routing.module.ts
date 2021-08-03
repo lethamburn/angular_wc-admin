@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./@pages/home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'tags',
+    loadChildren: () =>
+      import('./@pages/tags/tags.module').then((m) => m.TagsModule),
+  },
   { path: ``, redirectTo: `home`, pathMatch: `full` },
 ];
 
