@@ -1,11 +1,19 @@
 <div class="navbar">
-  <ul>
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/tags">Tags</a></li>
-    <li><a routerLink="/playlists">Playlists</a></li>
-    <li><a routerLink="/comments">Comments</a></li>
-    <li><a routerLink="/users">Users</a></li>
-    <li><a routerLink="/login">Login</a></li>
-  </ul>
+    <ul>
+        <li>
+            <a routerLink="/home" routerLinkActive="navbar--active" [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+        </li>
+        <li><a routerLink="/tags" routerLinkActive="navbar--active">Tags</a></li>
+        <li>
+            <a routerLink="/playlists" routerLinkActive="navbar--active">Playlists</a>
+        </li>
+        <li>
+            <a routerLink="/comments" routerLinkActive="navbar--active">Comments</a>
+        </li>
+        <li><a routerLink="/users" routerLinkActive="navbar--active">Users</a></li>
+        <li><a routerLink="/login">Login</a></li>
+    </ul>
 </div>
 <router-outlet></router-outlet>
