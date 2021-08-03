@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./@pages/tags/tags.module').then((m) => m.TagsModule),
   },
+  {
+    path: 'playlists',
+    loadChildren: () =>
+      import('./@pages/playlists/playlists.module').then(
+        (m) => m.PlaylistsModule
+      ),
+  },
   { path: ``, redirectTo: `home`, pathMatch: `full` },
 ];
 
