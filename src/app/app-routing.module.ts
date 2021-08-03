@@ -19,6 +19,21 @@ const routes: Routes = [
         (m) => m.PlaylistsModule
       ),
   },
+  {
+    path: 'comments',
+    loadChildren: () =>
+      import('./@pages/comments/comments.module').then((m) => m.CommentsModule),
+  },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./@pages/users/users.module').then((m) => m.UsersModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./@pages/login/login.module').then((m) => m.LoginModule),
+  },
   { path: ``, redirectTo: `home`, pathMatch: `full` },
 ];
 
