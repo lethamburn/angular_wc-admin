@@ -1,0 +1,25 @@
+<div class="navbar">
+  <ul>
+    <li>
+      <a
+        routerLink="/home"
+        routerLinkActive="navbar--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+    </li>
+    <li><a routerLink="/tags" routerLinkActive="navbar--active">Tags</a></li>
+    <li>
+      <a routerLink="/playlists" routerLinkActive="navbar--active">Playlists</a>
+    </li>
+    <li>
+      <a routerLink="/comments" routerLinkActive="navbar--active">Comments</a>
+    </li>
+    <li><a routerLink="/users" routerLinkActive="navbar--active">Users</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li>
+      <a (click)="authService.SignOut()" style="cursor: pointer"> Salir </a>
+    </li>
+  </ul>
+</div>
