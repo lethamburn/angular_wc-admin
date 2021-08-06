@@ -1,25 +1,25 @@
 <div class="navbar">
-  <ul>
-    <li>
-      <a
-        routerLink="/home"
-        routerLinkActive="navbar--active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
+    <ul>
+        <li>
+            <a routerLink="/home" routerLinkActive="navbar--active" [routerLinkActiveOptions]="{ exact: true }">
         Home
       </a>
-    </li>
-    <li><a routerLink="/tags" routerLinkActive="navbar--active">Tags</a></li>
-    <li>
-      <a routerLink="/playlists" routerLinkActive="navbar--active">Playlists</a>
-    </li>
-    <li>
-      <a routerLink="/comments" routerLinkActive="navbar--active">Comments</a>
-    </li>
-    <li><a routerLink="/users" routerLinkActive="navbar--active">Users</a></li>
-    <li><a routerLink="/login">Login</a></li>
-    <li>
-      <a (click)="authService.SignOut()" style="cursor: pointer"> Salir </a>
-    </li>
-  </ul>
+        </li>
+        <li><a routerLink="/tags" routerLinkActive="navbar--active">Tags</a></li>
+        <li>
+            <a routerLink="/playlists" routerLinkActive="navbar--active">Playlists</a>
+        </li>
+        <li>
+            <a routerLink="/comments" routerLinkActive="navbar--active">Comments</a>
+        </li>
+        <li><a routerLink="/users" routerLinkActive="navbar--active">Users</a></li>
+
+        <li *ngIf="user; else notShow">
+            <a (click)="authService.SignOut()" style="cursor: pointer"> Salir </a>
+        </li>
+        <ng-template #notShow>
+            <li *ngIf="!user"><a routerLink="/login">Login</a></li>
+        </ng-template>
+
+    </ul>
 </div>

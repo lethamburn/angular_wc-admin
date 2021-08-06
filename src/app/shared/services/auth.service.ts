@@ -91,6 +91,7 @@ export class AuthService {
           this.router.navigate(['/']);
         });
         this.SetUserData(result.user);
+        location.reload();
       })
       .catch((error: any) => {
         window.alert(error);
@@ -121,6 +122,7 @@ export class AuthService {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
+      location.reload();
     });
   }
 }
